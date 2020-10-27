@@ -7,9 +7,8 @@
 
 // 見出し
 .heading {
-  font-family: 'jedi';
+  color: $color-black;
   text-align: center;
-  text-shadow: 0 0 2px rgba(255,255,255,.8);
 
   &--level1 {
     font-size: 2.4rem;
