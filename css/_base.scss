@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'jedi';
+  src: url('/janken_ogawa_08/fonts/Starjedi.ttf') format('truetype');
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.0rem;
+  color: #fff;
+  background-color: #000;
+  font-family: "Helvetica Neue",
+                Arial,
+                "Hiragino Kaku Gothic ProN",
+                "Hiragino Sans",
+                Meiryo,
+                sans-serif;
+  letter-spacing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+img {
+  width: 100%; 
+  height: auto
+}
+
