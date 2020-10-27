@@ -70,7 +70,7 @@ html {
 }
 
 body {
-  font-size: 1.0rem;
+  font-size: 1.6rem;
   color: #333;
   background-color: #F7F7F7;
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
@@ -89,6 +89,10 @@ img {
   height: auto;
 }
 
+section {
+  margin-bottom: 60px;
+}
+
 .section-inner {
   width: 95%;
   margin: 0 auto;
@@ -96,32 +100,31 @@ img {
 
 .heading {
   color: #333333;
-  font-size: 3.2rem;
   text-align: center;
 }
 
 .heading--level1 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
 }
 
 .heading--level2 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
 }
 
 .heading--level3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .text {
   font-size: 1.6rem;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  text-align: center;
 }
 
 .btn {
+  border: none;
   display: inline-block;
   text-align: center;
   font-size: 2.4rem;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
   width: 100%;
   padding: 0.5em 1em;
   background-color: transparent;
@@ -133,47 +136,35 @@ img {
   border-radius: 2em;
 }
 
-.btn--light-side {
-  color: #ebcd29;
-  background-color: rgba(214, 224, 129, 0.123);
-  -webkit-box-shadow: 1px -1px 3px 1px #c5c56f inset, -1px 1px 3px 1px #c5c56f inset;
-          box-shadow: 1px -1px 3px 1px #c5c56f inset, -1px 1px 3px 1px #c5c56f inset;
+.btn--primary {
+  color: #ffffff;
+  background-color: #86C833;
+  -webkit-box-shadow: 1px -1px 3px 1px #f7f7f7 inset, -1px 1px 3px 1px #f7f7f7 inset;
+          box-shadow: 1px -1px 3px 1px #f7f7f7 inset, -1px 1px 3px 1px #f7f7f7 inset;
 }
 
-.btn--light-side:hover {
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-  background-color: rgba(214, 224, 129, 0.4);
+.btn--primary:hover {
+  background-color: rgba(134, 200, 51, 0.6);
 }
 
-.btn--dark-side {
-  color: #ca0000;
-  background-color: rgba(226, 62, 62, 0.137);
-  -webkit-box-shadow: 1px -1px 3px 1px #D1382C inset, -1px 1px 3px 1px #D1382C inset;
-          box-shadow: 1px -1px 3px 1px #D1382C inset, -1px 1px 3px 1px #D1382C inset;
+.btn--cancel {
+  color: #ffffff;
+  background-color: #EB5741;
+  -webkit-box-shadow: 1px -1px 3px 1px #f7f7f7 inset, -1px 1px 3px 1px #f7f7f7 inset;
+          box-shadow: 1px -1px 3px 1px #f7f7f7 inset, -1px 1px 3px 1px #f7f7f7 inset;
 }
 
-.btn--dark-side:hover {
-  background-color: rgba(226, 62, 62, 0.3);
-}
-
-.btn--droid {
-  color: #23c2ce;
-  text-shadow: 0 0 2px #23c2ce;
-  background-color: rgba(62, 188, 226, 0.137);
-  -webkit-box-shadow: 1px -1px 3px 1px #2cb0d1 inset, -1px 1px 3px 1px #2cb0d1 inset;
-          box-shadow: 1px -1px 3px 1px #2cb0d1 inset, -1px 1px 3px 1px #2cb0d1 inset;
-}
-
-.btn--droid:hover {
-  background-color: rgba(62, 188, 226, 0.4);
+.btn--cancel:hover {
+  background-color: rgba(235, 87, 65, 0.6);
 }
 
 .btn--disable {
   pointer-events: none;
-  color: #ddd;
-  background-color: #444;
+  color: #333333;
+  background-color: #f7f7f7;
   -webkit-box-shadow: 1px -1px 3px 1px #ddd inset, -1px 1px 3px 1px #ddd inset;
           box-shadow: 1px -1px 3px 1px #ddd inset, -1px 1px 3px 1px #ddd inset;
+  opacity: 0.5;
 }
 
 .content-box {

@@ -1,4 +1,8 @@
 // inner wrapper
+section {
+  margin-bottom: 60px;
+}
+
 .section-inner {
   width: 95%;
   margin: 0 auto;
@@ -8,17 +12,16 @@
 // 見出し
 .heading {
   color: $color-black;
-  font-size: 3.2rem;
   text-align: center;
 
   &--level1 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
   &--level2 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
   &--level3 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -27,16 +30,16 @@
 
 .text {
   font-size: 1.6rem;
-  text-shadow: 0 0 4px rgba(255,255,255,.8);
+  text-align: center;
 }
 
 // button
 
 .btn {
+  border: none;
   display: inline-block;
   text-align: center;
   font-size: 2.4rem;
-  text-shadow: 0 0 2px rgba(255,255,255,.8);
   width: 100%;
   padding: 0.5em 1em;
   background-color: transparent;
@@ -46,46 +49,35 @@
     border-radius: 2em;
   }
 
-  &--light-side {
-    color: $color-light-side__text;
-    background-color: $color-light-side__background;
-    box-shadow: 1px -1px 3px 1px $color-light-side__border inset,
-                -1px 1px 3px 1px $color-light-side__border inset;
+  &--primary {
+    color: $color-pure-white;
+    background-color: $color-green;
+    box-shadow: 1px -1px 3px 1px $color-white inset,
+                -1px 1px 3px 1px $color-white inset;
     &:hover {
-      text-shadow: 0 0 5px rgba(0,0,0,.8);
-      background-color: rgba($color-light-side__background, 0.4);
+      background-color: rgba($color-green, 0.6);
+    }
+  }
+  
+  &--cancel {
+    color: $color-pure-white;
+    background-color: $color-red;
+    box-shadow: 1px -1px 3px 1px $color-white inset,
+                -1px 1px 3px 1px $color-white inset;
+    &:hover {
+      background-color: rgba($color-red, 0.6);
     }
   }
   
 
-  &--dark-side {
-    color: $color-dark-side__text;
-    background-color: $color-dark-side__background;
-    box-shadow: 1px -1px 3px 1px $color-dark-side__border inset,
-                -1px 1px 3px 1px $color-dark-side__border inset;
-    &:hover {
-      background-color: rgba($color-dark-side__background, 0.3);
-    }
-  }
-
-
-  &--droid {
-    color: $color-droid__text;
-    text-shadow: 0 0 2px $color-droid__text;
-    background-color: $color-droid__background;
-    box-shadow: 1px -1px 3px 1px $color-droid__border inset,
-                -1px 1px 3px 1px $color-droid__border inset;
-    &:hover {
-      background-color: rgba($color-droid__background, 0.4);
-    }
-  }
 
   &--disable {
     pointer-events: none;
-    color: #ddd;
-    background-color: #444;
+    color: $color-black;
+    background-color: $color-white;
     box-shadow: 1px -1px 3px 1px #ddd inset,
     -1px 1px 3px 1px #ddd inset;
+    opacity: 0.5;
   }
 
 }

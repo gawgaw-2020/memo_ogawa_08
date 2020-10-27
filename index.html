@@ -1,17 +1,30 @@
 <?php include(dirname(__FILE__).'/_inc/_header.html'); ?>
 
   <main>
+    <h1 class="heading heading--level1">朝やることリスト</h1>
+    <p class="text">やること候補から選択してやることリストを作るアプリ</p>
     <section>
-      <h1 class="heading">その日やることの候補が並んでいるページ</h1>
+      <h2 class="heading heading--level2">その日やることの候補一覧</h2>
+      <p class="text">やることにチェックボックスを入れてね</p>
     </section>
-    <a href="hoge.html">リンク先</a>
+    <section>
+      <h2 class="heading heading--level2">セーブ・クリアー</h2>
+      <p class="text">ローカルストレージへの保存・全クリアー</p>
+      <button class="btn btn--primary" href="hoge.html">OKボタン</button>
+      <button class="btn btn--cancel" href="hoge.html">戻るボタン</button>  
+      <button class="btn btn--disable" href="hoge.html">戻るボタン</button>  
+    </section>
+    <section>
+      <h2 class="heading heading--level2">セーブしたやることリストの一覧表示デモ</h2>
+      <p class="text">上で選択したアイテムが並ぶ</p>
+    </section>
   </main>
 
   <?php include(dirname(__FILE__).'/_inc/_footer.html'); ?>
 
   <!-- ページ固有のスクリプト -->
   <script>
-    localStorage.setItem('test', '燃えるゴミを出す')
+    localStorage.setItem('test', '燃えるゴミを出す');
   </script>
 
   <?php include(dirname(__FILE__).'/_inc/_common-script.html'); ?>
