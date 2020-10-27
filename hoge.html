@@ -2,16 +2,16 @@
 
   <main>
     <section>
-      <h1 class="heading">その日やることの候補が並んでいるページ</h1>
+      <h1 class="heading">前のページで選択した、やる事を一覧表示するページ</h1>
     </section>
-    <a href="hoge.html">リンク先</a>
   </main>
 
   <?php include(dirname(__FILE__).'/_inc/_footer.html'); ?>
 
   <!-- ページ固有のスクリプト -->
   <script>
-    localStorage.setItem('test', '燃えるゴミを出す')
+    const getItem = localStorage.getItem('test');
+    console.log(getItem);
   </script>
 
   <?php include(dirname(__FILE__).'/_inc/_common-script.html'); ?>

@@ -96,6 +96,7 @@ img {
 
 .heading {
   color: #333333;
+  font-size: 3.2rem;
   text-align: center;
 }
 
@@ -116,16 +117,10 @@ img {
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
 }
 
-.text--jedi {
-  font-family: 'jedi';
-  font-size: 2.4rem;
-}
-
 .btn {
   display: inline-block;
   text-align: center;
   font-size: 2.4rem;
-  font-family: 'jedi';
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
   width: 100%;
   padding: 0.5em 1em;
