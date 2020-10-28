@@ -229,6 +229,9 @@ section {
 }
 
 .todo-select #todo-options {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   margin: 0 auto;
   display: -webkit-box;
@@ -236,6 +239,12 @@ section {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+  .todo-select #todo-options {
+    margin: 0 auto 40px;
+  }
 }
 
 .todo-select #todo-options label {
@@ -279,6 +288,12 @@ section {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 768px) {
+  .start-area {
+    margin: 0 auto 80px;
+  }
+}
+
 .workout-area p.text {
   margin-bottom: 8px;
 }
@@ -287,6 +302,11 @@ section {
   width: 90%;
   margin: 0 auto;
   padding: 0;
+}
+
+.workout-area #clickable-list p {
+  width: 300px;
+  margin: 0 auto;
 }
 
 .workout-area #clickable-list tr {
@@ -305,5 +325,21 @@ section {
   display: block;
   height: 40px;
   line-height: 40px;
+}
+
+.workout-area a {
+  font-size: 1.4rem;
+  max-width: 400px;
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.app-btns a {
+  max-width: 400px;
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 8px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -3,18 +3,19 @@
   <main>
     <h1 class="heading heading--level2">ガンバレ!!</h1>
     <section class="workout-area">
-      <p class="text">終わったらリストを選択!!</p>
+      <p id="text" class="text">終わったらリストを選択!!</p>
       <ul id="clickable-list">
         
       </ul>
+      <a class="btn btn--cancel" href="#" onclick="history.back()">戻る</a>
     </section>
-    <section>
+    <section class="app-btns">
       <a class="btn btn--primary" href="fb129765800430121://">Feedly</a>
       <a class="btn btn--primary" href="kindle://">Kindle</a>
       <a class="btn btn--primary" href="youtube://">YouTube</a>
       <a class="btn btn--primary" href="twitter://">Twitter</a>
     </section>
-  </main>
+    </main>
 
   <?php include(dirname(__FILE__).'/_inc/_footer.html'); ?>
 
@@ -51,6 +52,7 @@
       const randomNumber = Math.floor(Math.random() * 2);
       const h = `<p id="complete-image"><img src="/memo_ogawa_08/image/complete${randomNumber}.jpeg" ></p>`;
       $("#clickable-list").append(h);
+      $('#text').html('おつかれさまでした😆');
       }
     }
 

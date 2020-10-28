@@ -11,10 +11,14 @@
 
 .todo-select {
   #todo-options {
+    justify-content: center;
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    @include mq() {
+      margin: 0 auto 40px;
+    }
     label {
       font-size: 1.2rem;
       margin: 0 auto;
@@ -52,6 +56,9 @@
     width: 80%;
     margin: 0 auto;
   }
+  @include mq() {
+    margin: 0 auto 80px;
+  }
 }
 
 .workout-area {
@@ -62,6 +69,10 @@
     width: 90%;
     margin: 0 auto;
     padding: 0;
+    p {
+      width: 300px;
+      margin: 0 auto;
+    }
     tr {
       font-size: 1.2rem;
       margin: 0 auto;
@@ -76,5 +87,22 @@
       height: 40px;
       line-height: 40px;
     }
+  }
+  a {
+    font-size: 1.4rem;
+    max-width: 400px;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.app-btns {
+  a {
+    max-width: 400px;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 8px;
   }
 }
