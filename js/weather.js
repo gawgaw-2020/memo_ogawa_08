@@ -1,7 +1,7 @@
 //APIのコールを関数化
 const REQUEST_AJAX = async (city_id) => {
 
-  // const URL = `http://api.openweathermap.org/data/2.5/weather?id=${city_id}&appid=c19772e1524565f4c314f9e04f1814f8&lang=ja&units=metric`;
+  const URL = `http://api.openweathermap.org/data/2.5/weather?id=${city_id}&appid=c19772e1524565f4c314f9e04f1814f8&lang=ja&units=metric`;
   const JSON = await fetch(URL)
       .then(res => {
           return res.json();
