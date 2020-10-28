@@ -1,11 +1,18 @@
 <?php include(dirname(__FILE__).'/_inc/_header.html'); ?>
 
   <main>
-    <section>
-      <h1 class="heading">前のページで選択した、やる事を一覧表示するページ</h1>
+    <h1 class="heading heading--level2">ガンバレ!!</h1>
+    <section class="workout-area">
+      <p class="text">終わったらリストを選択!!</p>
+      <ul id="clickable-list">
+        
+      </ul>
     </section>
     <section>
-      <a id="create" class="btn btn--primary" href="fb129765800430121://">Feedly</a>
+      <a class="btn btn--primary" href="fb129765800430121://">Feedly</a>
+      <a class="btn btn--primary" href="kindle://">Kindle</a>
+      <a class="btn btn--primary" href="youtube://">YouTube</a>
+      <a class="btn btn--primary" href="twitter://">Twitter</a>
     </section>
   </main>
 
@@ -13,8 +20,105 @@
 
   <!-- ページ固有のスクリプト -->
   <script>
-    const getItem = localStorage.getItem('test');
-    console.log(getItem);
+    $('#complete-image').hide();
+    // 並び替えて各オブジェクトを配列として格納
+    // 1.キーの一覧を配列として取得
+    // 2.sort()で並び替え
+    // 3.map()で新しい配列を作成 引数はkey、ストレージのvalueを加えたオブジェクトを返している
+    const collection = Object.keys(localStorage).sort().map((key) => {
+      return {
+          key: key,
+          value: localStorage.getItem(key)
+      }
+    });
+
+    // idを付けながら下部にhtml生成
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = collection[i].key;
+      const todo = collection[i].value;
+      const h = '<tr id=list'+key+'><td>' + todo + '</td></tr>';
+      $("#clickable-list").append(h);
+    }
+
+    // クリックしたアイテムを消す＆ローカルストレージから削除する関数
+    function listFadeOutLocalremove(i) {
+      $(`#list${i}`).remove();
+      localStorage.removeItem(i);
+      const elem = $('tr');
+      console.log(elem);
+      if(elem.length === 0){
+      /** "空"のときの処理 */
+      const randomNumber = Math.floor(Math.random() * 2);
+      const h = `<p id="complete-image"><img src="/memo_ogawa_08/image/complete${randomNumber}.jpeg" ></p>`;
+      $("#clickable-list").append(h);
+      }
+    }
+
+    $('#list00').on('click', () => {
+      listFadeOutLocalremove('00')
+    });
+    $('#list01').on('click', () => {
+      listFadeOutLocalremove('01')
+    });
+    $('#list02').on('click', () => {
+      listFadeOutLocalremove('02')
+    });
+    $('#list03').on('click', () => {
+      listFadeOutLocalremove('03')
+    });
+    $('#list04').on('click', () => {
+      listFadeOutLocalremove('04')
+    });
+    $('#list05').on('click', () => {
+      listFadeOutLocalremove('05')
+    });
+    $('#list06').on('click', () => {
+      listFadeOutLocalremove('06')
+    });
+    $('#list07').on('click', () => {
+      listFadeOutLocalremove('07')
+    });
+    $('#list08').on('click', () => {
+      listFadeOutLocalremove('08')
+    });
+    $('#list09').on('click', () => {
+      listFadeOutLocalremove('09')
+    });
+    $('#list10').on('click', () => {
+      listFadeOutLocalremove('10')
+    });
+    $('#list11').on('click', () => {
+      listFadeOutLocalremove('11')
+    });
+    $('#list12').on('click', () => {
+      listFadeOutLocalremove('12')
+    });
+    $('#list13').on('click', () => {
+      listFadeOutLocalremove('13')
+    });
+    $('#list14').on('click', () => {
+      listFadeOutLocalremove('14')
+    });
+    $('#list15').on('click', () => {
+      listFadeOutLocalremove('15')
+    });
+    $('#list16').on('click', () => {
+      listFadeOutLocalremove('16')
+    });
+    $('#list17').on('click', () => {
+      listFadeOutLocalremove('17')
+    });
+    $('#list18').on('click', () => {
+      listFadeOutLocalremove('18')
+    });
+    $('#list19').on('click', () => {
+      listFadeOutLocalremove('19')
+    });
+    $('#list20').on('click', () => {
+      listFadeOutLocalremove('20')
+    });
+    
+
   </script>
 
   <?php include(dirname(__FILE__).'/_inc/_common-script.html'); ?>

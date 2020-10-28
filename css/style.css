@@ -1,61 +1,85 @@
-/* A Modern CSS Reset */
-*, *::before, *::after {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-ul[class], ol[class] {
+/* Remove default padding */
+ul[class],
+ol[class] {
   padding: 0;
 }
 
-body, h1, h2, h3, h4, p, ul[class], ol[class], figure, blockquote, dl, dd {
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
+/* Set core root defaults */
 html {
   scroll-behavior: smooth;
 }
 
+/* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
 
-ul[class], ol[class] {
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
   list-style: none;
 }
 
+/* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-img, picture {
+/* Make images easier to work with */
+img,
+picture {
   max-width: 100%;
   display: block;
 }
 
+/* Natural flow and rhythm in articles by default */
 article > * + * {
   margin-top: 1em;
 }
 
-input, button, textarea, select {
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-img:not([alt]) {
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
-}
-
+/* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
-    -webkit-animation-duration: .01ms !important;
-            animation-duration: .01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
     -webkit-animation-iteration-count: 1 !important;
             animation-iteration-count: 1 !important;
-    -webkit-transition-duration: .01ms !important;
-            transition-duration: .01ms !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -90,7 +114,8 @@ img {
 }
 
 section {
-  margin-bottom: 60px;
+  padding: 16px 0;
+  margin-bottom: 8px;
 }
 
 .section-inner {
@@ -101,6 +126,7 @@ section {
 .heading {
   color: #333333;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .heading--level1 {
@@ -187,5 +213,97 @@ section {
   background-color: rgba(62, 188, 226, 0.137);
   -webkit-box-shadow: 1px -1px 3px 1px #2cb0d1 inset, -1px 1px 3px 1px #2cb0d1 inset;
           box-shadow: 1px -1px 3px 1px #2cb0d1 inset, -1px 1px 3px 1px #2cb0d1 inset;
+}
+
+.title {
+  text-align: center;
+}
+
+.title .text {
+  margin-bottom: 8px;
+}
+
+.title .ctiy {
+  display: block;
+  margin: 0 auto;
+}
+
+.todo-select #todo-options {
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.todo-select #todo-options label {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 16px;
+  max-width: 400px;
+  background-color: rgba(134, 200, 51, 0.2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+}
+
+.todo-select #todo-options label.checked {
+  background-color: rgba(134, 200, 51, 0.6);
+}
+
+.todo-select #todo-options label input[type=checkbox] {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  margin-right: 8px;
+}
+
+#clear {
+  font-size: 1.6rem;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.start-area #create {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.workout-area p.text {
+  margin-bottom: 8px;
+}
+
+.workout-area #clickable-list {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.workout-area #clickable-list tr {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 16px;
+  max-width: 400px;
+  background-color: rgba(134, 200, 51, 0.2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+  height: 40px;
+  line-height: 40px;
 }
 /*# sourceMappingURL=style.css.map */

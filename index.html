@@ -1,34 +1,29 @@
 <?php include(dirname(__FILE__).'/_inc/_header.html'); ?>
 
   <main>
-    <h1 class="heading heading--level1">朝やることリスト</h1>
-    <p class="text">やること候補から選択してやることリストを作るアプリです</p>
-    <p class="text">セーブすると作成される、作成されたリストはタッチすると消える</p>
-    <section>
-      <h2 class="heading heading--level2">その日やることの候補一覧</h2>
-      <p class="text">やることにチェックボックスを入れてね</p>
-      <div id="todoOptions">
-        <!-- ここに配列のtodoOptionsが入ってくる -->
+    <section class="title">
+      <h1 class="heading heading--level1">筋トレメニュー</h1>
+      <p class="text">今日の筋トレメニューを選ぼう!!</p>
+      <p class="text">まずは天気予報をチェック!!</p>
+      <select class="city">
+          <option value="1815022" selected>千葉</option>
+          <option value="1850147">東京</option>
+      </select>
+      <p id="weather_description"></p>
+    </section>
+    <section class="todo-select">
+      <div class="section-inner">
+        <h2 class="heading heading--level2">メニュー</h2>
+        <p class="text">やることにチェックを入れてね</p>
+        <div id="todo-options">
+          <!-- ここに配列のtodoOptionsが入ってくる -->
+        </div>
       </div>
-    </section>
-    <section>
-      <h2 class="heading heading--level2">セーブ・クリアー</h2>
-      <p class="text">ローカルストレージへの保存・全クリアー</p>
-      <button id="create" class="btn btn--primary" href="hoge.html">OKボタン</button>
       <button id="clear" class="btn btn--cancel" href="hoge.html">データクリア</button>  
-      <button class="btn btn--disable" href="hoge.html">押せないボタン</button>  
     </section>
-    <section>
-      <h2 class="heading heading--level2">セーブしたやることリストの一覧表示デモ</h2>
-      <p class="text">上で選択したアイテムが並ぶ</p>
-      <ul id="todolist">
-
-      </ul>
-    </section>
-    <section>
-      <h2 class="heading heading--level2">確認したら次のページへ</h2>
-      <p class="text">次ページへのリンク</p>
-      <a id="create" class="btn btn--primary" href="hoge.html">OKボタン</a>
+    <section class="start-area">
+      <h2 class="heading heading--level2">確認したらlet's START!!</h2>
+      <a id="create" class="btn btn--primary" href="hoge.html">START</a>
     </section>
   </main>
 
@@ -36,36 +31,56 @@
 
   <!-- ページ固有のスクリプト -->
   <script>
+    // ブラウザの戻るボタンはリロード
+    window.addEventListener( "pageshow", function ( event ) {
+      var historyTraversal = event.persisted || 
+                            ( typeof window.performance != "undefined" && 
+                                window.performance.navigation.type === 2 );
+      if ( historyTraversal ) {
+        // Handle page restore.
+        window.location.reload();
+      }
+    });
 
     // todoの選択肢を配列で定義
     const todoOptions = [
-      'お水を飲む',
-      'クイックルワイパー',
-      'お弁当を作る',
-      '洗濯する',
-      'トイレ掃除',
-      'お風呂掃除',
-      '晩ご飯作る',
-      'シンク掃除',
+      '背筋 【60回⇒30秒休む】×3セット',
+      'レッグレイズ 【15回⇒30秒休む】×6セット',
+      'ヒップリフト 【20回⇒30秒休む】×3セット',
+      '体幹 【300秒キープ⇒30秒休む】×3セット',
+      'ワイドスクワット：60回3セット',
+      'ブルガリアンスクワット：片足ずつ15回8セット',
+      'クラムシェル：左右50回ずつ',
+      '膝つき腕立て伏せ：15回20セット',
+      'バンド肩トレ1：30秒30セット',
+      '鉄棒で斜め懸垂：150回1セット',
+      'ランニング30分',
+      'ジャンピングスプリットスクワット20回×4セット',
+      'バーピー100回',
+      'ドンキー・カーフレイズ50回4セット',
+      'ストレッチ',
+      'プロテインを飲む',
     ];
 
 
     // 配列の数だけ、idを付けながらhtmlを生成
     for (let i = 0; i < todoOptions.length; i++) {
-      h = `<label><input id="test${i}" type="checkbox" name="todo" value="${todoOptions[i]}">${todoOptions[i]}</label>`;
-      $("#todoOptions").append(h);
+      h = `<label class="test${String(i).padStart(2, "0")}"><input id="test${String(i).padStart(2, "0")}" type="checkbox" name="todo" value="${todoOptions[i]}">${todoOptions[i]}</label>`;
+      $("#todo-options").append(h);
     }
 
 
     // inputの数だけ、クリックイベントを生成 チェックされたらストレージに保存 チェック外れる時はストレージから削除
     for (let i = 0; i < todoOptions.length; i++) {
-      $(`#test${i}`).on('click', () => {
-        if ( $(`#test${i}`).is(':checked') ) {
-          const key = i;
-          const todo = $(`#test${i}`).val();
+      $(`#test${String(i).padStart(2, "0")}`).on('click', () => {
+        if ( $(`#test${String(i).padStart(2, "0")}`).is(':checked') ) {
+          const key = String(i).padStart(2, "0");
+          const todo = $(`#test${String(i).padStart(2, "0")}`).val();
           localStorage.setItem(key, todo);
+          $(`.test${String(i).padStart(2, "0")}`).addClass('checked');
         } else {
-          localStorage.removeItem(i);
+          localStorage.removeItem(String(i).padStart(2, "0"));
+          $(`.test${String(i).padStart(2, "0")}`).removeClass('checked');
         }
       });
     }
@@ -80,7 +95,7 @@
     const collection = Object.keys(localStorage).sort().map((key) => {
       return {
           key: key,
-          value: localStorage.getItem(key)
+          value: localStorage.getItem(key),
       }
     });
 
@@ -107,22 +122,18 @@
 
     // ローカルストレージのデータクリア
     $('#clear').on('click', () => {
-      localStorage.clear()
-      window.location.href = '/memo_ogawa_08/';
+      if(confirm('選択したデータをクリアしますか？')){
+        localStorage.clear()
+        window.location.href = '/memo_ogawa_08/';
+      }
     });
 
 
     // ストレージの配列からキーに当てはまるリストに予めチェックをつける
     collection.forEach(function( value ) {
       $(`#test${value.key}`).prop('checked', true);
+      $(`.test${value.key}`).addClass('checked');
     });
-
-
-
-
-
-
-
 
   </script>
 

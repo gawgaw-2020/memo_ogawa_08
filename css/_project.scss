@@ -1,0 +1,80 @@
+.title {
+  text-align: center;
+  .text {
+    margin-bottom: 8px;
+  }
+  .ctiy {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.todo-select {
+  #todo-options {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    label {
+      font-size: 1.2rem;
+      margin: 0 auto;
+      width: 100%;
+      user-select: none;
+      padding: 0 16px;
+      max-width: 400px;
+      background-color: rgba($color-green, 0.2);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      &.checked {
+        background-color: rgba($color-green, 0.6);
+      }
+      input[type=checkbox] {
+        transform: scale(1.5);
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+  #clear {
+    font-size: 1.6rem;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+.start-area {
+  #create {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.workout-area {
+  p.text {
+    margin-bottom: 8px;
+  }
+  #clickable-list {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    tr {
+      font-size: 1.2rem;
+      margin: 0 auto;
+      width: 100%;
+      user-select: none;
+      padding: 0 16px;
+      max-width: 400px;
+      background-color: rgba($color-green, 0.2);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: block;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
