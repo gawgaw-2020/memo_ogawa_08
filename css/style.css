@@ -175,13 +175,13 @@ section {
 
 .btn--cancel {
   color: #ffffff;
-  background-color: #EB5741;
+  background-color: #FF5644;
   -webkit-box-shadow: 1px -1px 3px 1px #f7f7f7 inset, -1px 1px 3px 1px #f7f7f7 inset;
           box-shadow: 1px -1px 3px 1px #f7f7f7 inset, -1px 1px 3px 1px #f7f7f7 inset;
 }
 
 .btn--cancel:hover {
-  background-color: rgba(235, 87, 65, 0.6);
+  background-color: rgba(255, 86, 68, 0.6);
 }
 
 .btn--disable {
@@ -216,7 +216,16 @@ section {
 }
 
 .title {
+  padding-top: 0;
+  padding-bottom: 0;
   text-align: center;
+}
+
+.title h1 {
+  background-color: #86C833;
+  color: #fff;
+  font-weight: normal;
+  padding: 8px 0;
 }
 
 .title .text {
@@ -226,6 +235,19 @@ section {
 .title .ctiy {
   display: block;
   margin: 0 auto;
+}
+
+.title #weather_description {
+  font-size: 1.8rem;
+  color: #FF5644;
+}
+
+.todo-select {
+  padding-top: 0;
+}
+
+.todo-select .text {
+  margin-bottom: 8px;
 }
 
 .todo-select #todo-options {
@@ -270,8 +292,8 @@ section {
 }
 
 .todo-select #todo-options label input[type=checkbox] {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   margin-right: 8px;
 }
 
@@ -292,6 +314,13 @@ section {
   .start-area {
     margin: 0 auto 80px;
   }
+}
+
+.fight {
+  background-color: #86C833;
+  color: #fff;
+  font-weight: normal;
+  padding: 8px 0;
 }
 
 .workout-area p.text {

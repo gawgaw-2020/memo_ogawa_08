@@ -1,5 +1,13 @@
 .title {
+  padding-top: 0;
+  padding-bottom: 0;
   text-align: center;
+  h1 {
+    background-color: $color-green;
+    color: #fff;
+    font-weight: normal;
+    padding: 8px 0;
+  }
   .text {
     margin-bottom: 8px;
   }
@@ -7,9 +15,17 @@
     display: block;
     margin: 0 auto;
   }
+  #weather_description {
+    font-size: 1.8rem;
+    color: $color-red;
+  }
 }
 
 .todo-select {
+  padding-top: 0;
+  .text {
+    margin-bottom: 8px;
+  }
   #todo-options {
     justify-content: center;
     width: 100%;
@@ -36,7 +52,7 @@
         background-color: rgba($color-green, 0.6);
       }
       input[type=checkbox] {
-        transform: scale(1.5);
+        transform: scale(1.2);
         margin-right: 8px;
       }
     }
@@ -59,6 +75,13 @@
   @include mq() {
     margin: 0 auto 80px;
   }
+}
+
+.fight {
+  background-color: $color-green;
+  color: #fff;
+  font-weight: normal;
+  padding: 8px 0;
 }
 
 .workout-area {

@@ -1,7 +1,7 @@
 <?php include(dirname(__FILE__).'/_inc/_header.html'); ?>
 
   <main>
-    <h1 class="heading heading--level2">ガンバレ!!</h1>
+    <h1 class="fight heading heading--level2">Workout time</h1>
     <section class="workout-area">
       <p id="text" class="text">終わったらリストを選択!!</p>
       <ul id="clickable-list">
@@ -51,7 +51,7 @@
       /** "空"のときの処理 */
       const randomNumber = Math.floor(Math.random() * 2);
       const h = `<p id="complete-image"><img src="/memo_ogawa_08/image/complete${randomNumber}.jpeg" ></p>`;
-      $("#clickable-list").append(h);
+      $("#clickable-list").append(h).hide().fadeIn(500);
       $('#text').html('おつかれさまでした😆');
       }
     }
